@@ -2,29 +2,76 @@ package com.company;
 
 public class Car {
     //Instanz, Gedächtnisvariabl
-    public int fuelAmount;
-    public int fuelConsumption; //per 100 km
-    public String brand;
-    public String serialNumber;
-    public String color;
+    private Engine engine;
+    private int fuelAmount;
+    private int fuelConsumption; //per 100 km
+    private String brand;
+    private String serialNumber;
+    private String color;
+    private int honkCounter;
 
     //Constructor
-    public Car(int fuelConsumption, String brand, String serialNumber) {
-        this.fuelConsumption = fuelConsumption;
+    public Car(Engine engine, String brand, String color) {
+        this.engine = engine;
         this.brand = brand;
-        this.serialNumber = serialNumber;
+        this.color = color;
 
 
     }
 
     //Method
-
-    public void drive() {
-        this.fuelAmount = fuelAmount - fuelConsumption;
-        System.out.println("I drive.");
+    public void honk() {
+        System.out.println("i am" + this.brand + "with the color" + this.color + "and the engine" + this.getEngine().getHorsePower() );
+        this.honkCounter++;
     }
 
 
 
+    public Engine getEngine() {
+        return engine;
+    }
 
+    public void setEngine(Engine engine) {
+        this.engine = engine;
+    }
+
+    public int getFuelAmount() {
+        return fuelAmount;
+    }
+
+    public void setFuelAmount(int fuelAmount) {
+        this.fuelAmount = fuelAmount;
+    }
+
+    public int getFuelConsumption() {
+        return fuelConsumption;
+    }
+
+    public void setFuelConsumption(int fuelConsumption) {
+        this.fuelConsumption = fuelConsumption;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public String getSerialNumber() {
+        return serialNumber;
+    }
+
+    public void setSerialNumber(String serialNumber) {
+        this.serialNumber = serialNumber;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
 }
